@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RecyclerViewBoiler1</string>
+    <string name="constellation1">Orion : Betelgeuse</string>
+    <string name="constellation2">Bootes : Arcturus</string>
+    <string name="constellation3">Scorpius : Antares</string>
+    <string name="constellation4">Cygnus : Deneb</string>
+    <string name="constellation5">Lyra : Vega</string>
 </resources>
