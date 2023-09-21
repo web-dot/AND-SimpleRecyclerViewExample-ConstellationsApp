@@ -1,6 +1,7 @@
 package com.example.recyclerviewboiler1
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewParent
@@ -27,14 +28,17 @@ class DataAdapter(val context: Context, val dataList: List<Constellation>): Recy
 
     // overriding onCreateViewHolder, params -> ViewGroup, ViewType, return ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder{
-
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_row, parent, false)
+        return DataViewHolder(itemView)
     }
     // overriding onBindViewHolder, params -> ViewHolder, Int(current item position)
     override fun onBindViewHolder(holder: DataViewHolder, position: Int){
-
+        val item = dataList[position]
+        // getString() is a method in the `Resources` class, you can get instance of the `Resources` class through the `context`
+        holder.textView.text = context.resources.getString(item.stringResourceId)
     }
     // overriding getItemCount
     override fun getItemCount(): Int {
-
+        return dataList.size
     }
 }
